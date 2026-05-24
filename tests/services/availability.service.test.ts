@@ -76,7 +76,7 @@ describe('Test availability.service', () => {
       const mockDate: Date = new Date(1466424490000);
       dateSpy = jest
         .spyOn(global, 'Date')
-        .mockImplementation(() => mockDate as unknown as string);
+        .mockImplementation((() => mockDate) as any);
     });
 
     it('should call request.put() with proper params and return updated atf', async () => {
